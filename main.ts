@@ -34,7 +34,8 @@ function alignIfSuitable(sprite:Sprite, direction:CollisionDirection) {
         return;
     }
 
-    if (Math.abs(sprite.x - currentLocation.x) >= EPSILON) {
+    // not close enough to crossing center
+    if (Math.sqrt(Math.pow(sprite.x - currentLocation.x, 2) + Math.pow(sprite.y - currentLocation.y, 2)) >= EPSILON) {
         return;
     }
 
